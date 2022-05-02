@@ -25,13 +25,17 @@
 # @author Erik Derr [derr@cs.uni-saarland.de]
 #
 
-# LibScout dir and arguments
-LIBSCOUT_ROOT="<NOTSET>"                      # path to the LibScout root directory
-LIBSCOUT="$LIBSCOUT_ROOT/build/libs/LibScout.jar"
-ANDROID_SDK="<NOTSET>"                        # argument: path to Android SDK
+CUR_DIR=`pwd`
 
-LOG_DIR=""    # optional argument: enable logging via "-d <log_dir>"
-JOBS=2        # Number of parallel instances
+# LibScout dir and arguments
+LIBSCOUT_ROOT="$(dirname "$0")/.."                      # path to the LibScout root directory
+LIBSCOUT_ROOT=$(cd "$LIBSCOUT_ROOT" && pwd)
+
+LIBSCOUT="$LIBSCOUT_ROOT/build/libs/LibScout.jar"
+ANDROID_SDK="$HOME/Android/platforms/android-32/android.jar"                        # argument: path to Android SDK
+
+LOG_DIR="logs"    # optional argument: enable logging via "-d <log_dir>"
+JOBS=8        # Number of parallel instances
 
 GRADLE_BUILD="$LIBSCOUT_ROOT/gradlew build"
 LIBXML="library.xml"
@@ -80,7 +84,6 @@ elif [ $# -eq 1 ]; then
 fi
 
 # change to libscout root
-CUR_DIR=`pwd`
 cd $LIBSCOUT_ROOT
 
 ## 3. generate LibScout.jar if not existing

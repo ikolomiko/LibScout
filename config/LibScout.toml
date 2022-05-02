@@ -6,13 +6,13 @@
 
 # if true, shows comment from library.xml in logs/json
 # upon lib detection
-show_comments = false
+show_comments = true
 
 [ sdk ]
 
 # path to Android SDK jar file
 # (recommended to use an absolute path)
-## android_sdk_jar = "/path/to/sdk/android.jar"
+android_sdk_jar = "../../Android/platforms/android-32/android.jar"
 
 
 [ logging ]
