@@ -31,8 +31,8 @@ CUR_DIR=`pwd`
 LIBSCOUT_ROOT="$(dirname "$0")/.."                      # path to the LibScout root directory
 LIBSCOUT_ROOT=$(cd "$LIBSCOUT_ROOT" && pwd)
 
-LIBSCOUT="$LIBSCOUT_ROOT/build/libs/LibScout.jar"
-ANDROID_SDK="$HOME/Android/platforms/android-32/android.jar"                        # argument: path to Android SDK
+LIBSCOUT="$LIBSCOUT_ROOT/jar-files/LibScout.jar"
+ANDROID_SDK="$LIBSCOUT_ROOT/jar-files/android32.jar"                        # argument: path to Android SDK
 
 LOG_DIR="logs"    # optional argument: enable logging via "-d <log_dir>"
 JOBS=8        # Number of parallel instances
