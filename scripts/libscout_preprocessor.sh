@@ -6,14 +6,14 @@ function create_xml() {
     libname=$(cut -d/ -f2 <<< $1)
     libver=$(cut -d/ -f3 <<< $1)
 
-    echo '<?xml version="1.0"?>' > $1/profile.xml
-    echo '<library>' >> $1/profile.xml
-    echo "<name>${libname}</name>" >> $1/profile.xml
-    echo '<category>Android</category>' >> $1/profile.xml
-    echo "<version>${libver}</version>" >> $1/profile.xml
-    echo '<releasedate></releasedate>' >> $1/profile.xml
-    echo '<comment></comment>' >> $1/profile.xml
-    echo '</library>' >> $1/profile.xml
+    echo '<?xml version="1.0"?>' > $1/library.xml
+    echo '<library>' >> $1/library.xml
+    echo "<name>${libname}</name>" >> $1/library.xml
+    echo '<category>Android</category>' >> $1/library.xml
+    echo "<version>${libver}</version>" >> $1/library.xml
+    echo '<releasedate></releasedate>' >> $1/library.xml
+    echo '<comment></comment>' >> $1/library.xml
+    echo '</library>' >> $1/library.xml
 }
 
 if [[ ! -d $1 ]] ; then
