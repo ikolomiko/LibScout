@@ -100,6 +100,7 @@ fi
 ## 4. generate library profiles
 echo "= Generating library profiles ="
 STARTTIME=$(date +%s)
+mkdir -p "$LIBSCOUT_ROOT/profiles"
 
 # run $JOBS instances in parallel
 echo "# `find $LIBDIR -type f -name $LIBXML| wc -l` library.xml files found in $LIBDIR"
