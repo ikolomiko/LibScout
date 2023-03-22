@@ -3,8 +3,8 @@ set -e
 
 function create_xml() {
     # $1 = version dir
-    libname=$(cut -d/ -f2 <<< $1)
-    libver=$(cut -d/ -f3 <<< $1)
+    libname=$(awk -F/ '{print $(NF-1)}' <<< $1)
+    libver=$(awk -F/ '{print $(NF-0)}' <<< $1)
 
     echo '<?xml version="1.0"?>' > $1/library.xml
     echo '<library>' >> $1/library.xml
